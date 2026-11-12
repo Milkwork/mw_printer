@@ -1,0 +1,26 @@
+name: mw_printer
+description: "Impressão em impressoras térmicas Bluetooth (Clássico SPP + BLE) para Android e iOS, com busca e pareamento dentro do app e gerador ESC/POS."
+version: 1.0.0
+publish_to: none
+
+environment:
+  # Mantido amplo para ser compatível com a versão de Flutter do FlutterFlow.
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: br.com.milkwork.mw_printer
+        pluginClass: MwPrinterPlugin
+      ios:
+        pluginClass: MwPrinterPlugin

@@ -1,0 +1,22 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <!-- Android 11 ou anterior -->
+  <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+
+  <!-- Android 12+: busca sem depender de Localização -->
+  <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+    android:usesPermissionFlags="neverForLocation"
+    tools:targetApi="s" />
+  <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+  <!--
+    ACCESS_FINE_LOCATION NÃO é declarada aqui de propósito: o app hospedeiro
+    precisa declará-la (necessária para busca no Android <= 11). Declarar aqui
+    com maxSdkVersion poderia limitar outras bibliotecas (ex.: geolocator).
+  -->
+
+  <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
+  <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
+</manifest>
